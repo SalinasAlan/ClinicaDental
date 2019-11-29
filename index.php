@@ -33,16 +33,7 @@ session_start();
             </div>
         </nav>
 
-        <?php if (!empty($user)): ?>
-            <br> Bienvenido. <?= $user['email']; ?>
-            <br> Estas logeado correctamente
-            <a href="logout.php">
-                Cerrar Sesion
-            </a>
-        <?php else: ?>
-            <h1>Ya Registrate y Logeate</h1>
-
-        <?php endif; ?>
+        
 
 
 
