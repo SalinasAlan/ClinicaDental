@@ -1,0 +1,24 @@
+body{
+    background-color: #E8E8E8 !important;
+}
+
+.carousel {
+    width: 90vw;
+    margin: 20px auto 30px auto;
+}
+
+
+img{
+    width: 100vw;
+    height: 60vh;
+    object-fit: cover;
+}
+
+footer{
+    display: flex !important;
+    padding: 10px;
+    margin: 0;
+    justify-content: center !important;
+    align-content: center !important;
+    color: white;
+}
