@@ -1,3 +1,18 @@
+<?php
+    session_start();
+
+    switch (isset($_SESSION['role'])) {
+        case 1:
+            header('Location: ./agendaDen.php');
+            break;            
+        case 2:
+            header('Location: ./agendaRecep.php');
+            break;
+        case 3:
+            header('Location: ./agendaPas.php');
+            break;    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,9 +46,18 @@
 
     <div class="wrapper fadeInDown" style="margin-top: -80px;">
         <div id="formContent">
-            <form>
+            <form  method="post" action="./agenda.php">
                 <h1 style="margin-bottom: 20px;">Login</h1>
-                <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="usuario" required>
+                <?php
+                    if (isset($_SESSION['error'])) {
+                        echo('
+                        <div class="alert alert-danger" role="alert">
+                            '.$_SESSION['error'].'
+                        </div>
+                        ');
+                    }
+                ?>
+                <input type="text" id="usuario" class="fadeIn second" name="usuario" placeholder="usuario" required focus>
                 <input type="password" id="contrasenia" class="fadeIn third" name="contrasenia" placeholder="contraseña"
                     required>
                 <input type="submit" class="fadeIn fourth" value="Log In">
@@ -43,7 +67,7 @@
 </body>
 
 <footer class="bg-dark">
-    <p class="texto">Cuar es un nickname tan reservado como la pagina y su mismo creador.</p>
+    <p class="texto">Clinica dental</p>
 </footer>
 
 </html>
