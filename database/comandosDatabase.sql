@@ -6,7 +6,8 @@ CREATE TABLE USUARIOS(
     idRole INT(2) NOT NULL, 
     nombre VARCHAR(30) NOT NULL,
     apellidos VARCHAR(50) NOT NULL,
-    telefono INT(10) NOT NULL,
+    contrasenia VARCHAR(30) NOT NULL,
+    telefono VARCHAR(10) NOT NULL,
     correo VARCHAR(30) NOT NULL,
     FOREIGN KEY (idRole) REFERENCES ROLES(idRole)
 );
@@ -18,10 +19,9 @@ CREATE TABLE ROLES(
 
 CREATE TABLE CITAS(
     idCita INT(4) NOT NULL PRIMARY KEY,
-    idPaciente INT NOT NULL,
-    idDentista INT NOT NULL,
+    paciente VARCHAR(30) NOT NULL,
+    telefono VARCHAR(10) NOT NULL, 
+    dentista VARCHAR(30) NOT NULL,
     fecha DATE NOT NULL,
-    horario INT NOT NULL,
-    FOREIGN KEY (idPaciente) REFERENCES USUARIOS(idUsuario),
-    FOREIGN KEY (idDentista) REFERENCES USUARIOS(idUsuario)
+    horario VARCHAR(6) NOT NULL
 );
