@@ -72,7 +72,7 @@
     </div>
 
     <footer class="bg-dark">
-        <p class="texto">Cuar es un nickname tan reservado como la pagina y su mismo creador.</p>
+        <p class="texto">Clinica dental</p>
     </footer>
 
 
