@@ -1,3 +1,17 @@
+<?php
+    session_start(); 
+
+    switch ($_SESSION['role']) {
+        case 1:
+            header('Location: ./agendaDen.php');
+            break;            
+        case 2:
+            header('Location: ./agendaRecep.php');
+            break;   
+        // default:
+        // header('Location: ./index.php');    
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,42 +40,29 @@
                     </div>
         
                     <ul class="nav navbar-nav navbar-right">
-                        <li><a href="./login.php"><span class="glyphicon glyphicon-log-in"> Cerrar Sesion </a></li>
+                        <li>
+                            <form method="post" action="./logout.php">
+                                <button type="submit" class="btn btn-light">Cerrar session</button>
+                            </form>
+                        </li>
                     </ul>
                 </div>
             </nav>
         
-            <h1 style="max-width: 100vw; margin: 30px; text-align: center;">Bienvenido --</h1>
+            <h1 style="max-width: 100vw; margin: 30px; text-align: center;">
+                Bienvenido
+                <?php
+                    echo($_SESSION['nombre']);
+                ?>
+            </h1>
         
-            <table class="table" style="width: 70%; margin: 30px auto 30px auto;">
-                <thead class="thead-dark">
-                    <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Dentista</th>
-                        <th scope="col">Horario</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                    </tr>
-                </tbody>
-            </table>
-            
+            <?php
+                include_once('./paciente.php');
+            ?>
+                
+                    
             <footer class="bg-dark">
-                <p class="texto">Cuar es un nickname tan reservado como la pagina y su mismo creador.</p>
+                <p class="texto">Clinica dental</p>
             </footer>
 </body>
 </html>

@@ -1,3 +1,17 @@
+<?php
+    session_start(); 
+
+    switch ($_SESSION['role']) {
+        case 1:
+            header('Location: ./agendaDen.php');
+            break; 
+        case 3:
+            header('Location: ./agendaPas.php');
+            break; 
+        // default:
+        //     header('Location: ./index.php');      
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -28,7 +42,11 @@
             </div>
 
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="./login.php"><span class="glyphicon glyphicon-log-in"> Cerrar Sesion </a></li>
+                <li>
+                    <form method="post" action="./logout.php">
+                        <button type="submit" class="btn btn-light">Cerrar session</button>
+                    </form>
+                </li>
             </ul>
         </div>
     </nav>
@@ -36,53 +54,12 @@
     <h1 style="max-width: 100vw; margin-top: 30px; text-align: center;">Agenda de citas</h1>
     <h3 style="max-width: 100vw; margin: 10px; text-align: center;">Bienvenida</h3>
 
-    <table class="table" style="width: 70%; margin: 30px auto 30px auto;">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">#</th>
-                <th scope="col">Paciente</th>
-                <th scope="col">Horario</th>
-                <th scope="col">Telefono</th>
-                <th scope="col">Dentista</th>
-                <th scope="col"></th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th scope="row">1</th>
-                <td>Mark</td>
-                <td>Otto</td>
-                <td>72223654567</td>
-                <td>Angela</td>
-                <td>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">2</th>
-                <td>Jacob</td>
-                <td>Thornton</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-            <tr>
-                <th scope="row">3</th>
-                <td>Larry</td>
-                <td>the Bird</td>
-                <td></td>
-                <td></td>
-                <td>
-                    <button type="button" class="btn btn-danger">Eliminar</button>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-
-    <footer class="bg-dark">
-        <p class="texto">Cuar es un nickname tan reservado como la pagina y su mismo creador.</p>
+    <?php
+        include_once('./recep.php');
+    ?>
+    
+   <footer class="bg-dark">
+        <p class="texto">Clinica dental</p>
     </footer>
 </body>
 
