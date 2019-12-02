@@ -38,8 +38,8 @@
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                             <a class="dropdown-item" href="#">Agendar Nueva Cita</a>
-                            <a class="dropdown-item" href="#">Agenda General</a>
-                            <a class="dropdown-item" href="#">Citas Agendadas</a>
+                            <a class="dropdown-item" href="./agendaDen.php">Agenda General</a>
+                            <a class="dropdown-item" href="./agendaRecep.php">Citas Agendadas</a>
                         </div>
                     </div>
                 </li>
